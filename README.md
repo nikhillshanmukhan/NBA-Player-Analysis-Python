@@ -7,13 +7,14 @@ This project is an **NBA Player Data Analysis** implemented in Python using Jupy
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)  
-2. [Data Story](#data-story)  
-3. [Visualizations](#visualizations)  
-4. [Key Insights](#key-insights)  
-5. [Repository Structure](#repository-structure)  
-6. [How to Run](#how-to-run)  
-7. [Requirements](#requirements)   
+1. [Project Overview](#project-overview)
+2. [Preprocessing Steps](#Preprocessing-steps)  
+3. [Data Story](#data-story)  
+4. [Visualizations](#visualizations)  
+5. [Key Insights](#key-insights)  
+6. [Repository Structure](#repository-structure)  
+7. [How to Run](#how-to-run)  
+8. [Requirements](#requirements)   
 
 ---
 
@@ -28,6 +29,20 @@ The NBA Player Data Analysis project is designed to examine:
 - **Correlation metrics** – how age relates to player salary  
 
 ---
+## 🔧 Preprocessing Steps
+
+#### 📏 Fixed Height Column
+Replaced inconsistent entries with random heights ranging from **150 cm to 180 cm** using the following code:
+
+```python
+df['Height'] = np.random.randint(150, 181, size=len(df))
+```
+
+#### 💰 Handled Missing Salaries
+Filled missing salary values with `0` or used an appropriate imputation strategy based on data context.
+
+#### 🧹 Cleaned Position Data
+Standardized player positions for uniformity (e.g., used `"PG"` instead of `"Point Guard"`).
 
 ## Data Story
 
@@ -40,16 +55,81 @@ The dataset contains detailed information on 458 NBA players, including:
 
 ---
 
-## Visualizations
+## 📊 Analysis Tasks with Visualizations
 
-> 📷 All visualizations are stored in the `/images/` directory. Click images below to view.
+---
 
-- ![Player Distribution by Team]([Images/Player Distribution by Team.png](https://github.com/nikhillshanmukhan/NBA-Player-Analysis-Python/blob/5c5f3ef98d8fee41d7b229da1c9edd8d6f719787/Images/Player%20Distribution%20by%20Team.png))  
-- ![Position Distribution](images/Player_Position_Distribution.png)  
-- ![Age Distribution](images/Player_Age_Distribution.png)  
-- ![Total Salary by Team](images/Total_Salary_by_Team.png)  
-- ![Total Salary by Position](images/Total_Salary_by_Position.png)  
-- ![Age vs Salary Correlation](images/Age_vs_Salary.png)  
+### 1. Player Distribution Across Teams
+
+#### 📝 Findings:
+- The dataset contains players from **30 NBA teams**
+- The **Boston Celtics** have the most players in the dataset (**15 players**, 3.28%)
+- Several teams have **15 players**, which appears to be the standard roster size
+- Distribution is relatively even across teams with minor variations
+
+#### 📉 Visualization:
+> ![Bar chart showing team distribution with percentages](images/Player_Distribution_by_Team.png)
+
+---
+
+### 2. Player Position Segregation
+
+#### 📝 Findings:
+- **Guards (PG/SG)** make up the largest portion (**43.2%**)
+- **Forwards (SF/PF)** account for **38.6%**
+- **Centers (C)** comprise **18.2%** of the dataset
+- **Point Guard (PG)** is the most common position (**22.5%**)
+- **Center (C)** is the least common (**18.2%**)
+
+#### 📊 Visualization:
+> ![Pie chart showing position distribution](images/Player_Position_Distribution.png)
+
+---
+
+### 3. Predominant Age Group
+
+#### 📝 Findings:
+- Majority of players (**62%**) are between **22–28 years** old
+- **Peak age** is **25 years** (**12.4%** of players)
+- Only **8%** of players are **30 or older**
+- **Youngest player**: *Devin Booker (19)*
+- **Oldest players**: *Tim Duncan & Andre Miller (40)*
+
+#### 📈 Visualization:
+> ![Histogram of age distribution](images/Player_Age_Distribution.png)
+
+---
+
+### 4. Team/Position with Highest Salary Expenditure
+
+#### 📝 Findings:
+- **Los Angeles Clippers** have the **highest total salary** ($128,543,069)
+- **Small Forwards (SF)** have the highest total salary across positions
+- **Shooting Guard (SG)** includes high-paid stars like *James Harden*
+- Notable high salaries:
+  - *Kobe Bryant* – $25M
+  - *LeBron James* – $22.9M
+  - *Dwight Howard* – $22.3M
+
+#### 📊 Visualization:
+> ![Stacked bar chart showing salary by team and position](images/Total_Salary_by_Team.png)  
+> ![Salary by position](images/Total_Salary_by_Position.png)
+
+---
+
+### 5. Age-Salary Correlation
+
+#### 📝 Findings:
+- Moderate **Weak positive correlation (r=0.21)** between **age** and **salary**
+- Salaries **peak at age 28–30**, then decline
+- Significant **outliers** among younger players with high salaries (e.g., *young stars*)
+- **Veterans (35+)** usually earn less unless they're **superstars**
+
+#### 📈 Visualization:
+> ![Scatter plot showing age vs salary](images/Age_vs_Salary.png)
+
+---
+
 
 ---
 
@@ -87,7 +167,7 @@ nba-player-analysis/
 
 1. Clone the repository  
    ```bash
-   git clone https://github.com/your-username/nba-player-analysis.git
+   git clone https://github.com/nikhillshanmukhan/nba-player-analysis.git
    cd nba-player-analysis
    ```
 
