@@ -68,7 +68,7 @@ The dataset contains detailed information on 458 NBA players, including:
 - Distribution is relatively even across teams with minor variations
 
 #### 📉 Visualization:
-> ![Bar chart showing team distribution with percentages](images/Player_Distribution_by_Team.png)
+> ![Bar chart showing team distribution with percentages](Images/Player_Distribution.png)
 
 ---
 
@@ -82,7 +82,7 @@ The dataset contains detailed information on 458 NBA players, including:
 - **Center (C)** is the least common (**18.2%**)
 
 #### 📊 Visualization:
-> ![Pie chart showing position distribution](images/Player_Position_Distribution.png)
+> ![Pie chart showing position distribution](Images/Position_Distribution.png)
 
 ---
 
@@ -96,7 +96,7 @@ The dataset contains detailed information on 458 NBA players, including:
 - **Oldest players**: *Tim Duncan & Andre Miller (40)*
 
 #### 📈 Visualization:
-> ![Histogram of age distribution](images/Player_Age_Distribution.png)
+> ![Histogram of age distribution](Age_Distribution.png)
 
 ---
 
@@ -112,8 +112,8 @@ The dataset contains detailed information on 458 NBA players, including:
   - *Dwight Howard* – $22.3M
 
 #### 📊 Visualization:
-> ![Stacked bar chart showing salary by team and position](images/Total_Salary_by_Team.png)  
-> ![Salary by position](images/Total_Salary_by_Position.png)
+> ![Stacked bar chart showing salary by team and position](Images/Salary_by_Team.png)  
+> ![Salary by position](Images/Salary_by_Position.png)
 
 ---
 
@@ -126,7 +126,7 @@ The dataset contains detailed information on 458 NBA players, including:
 - **Veterans (35+)** usually earn less unless they're **superstars**
 
 #### 📈 Visualization:
-> ![Scatter plot showing age vs salary](images/Age_vs_Salary.png)
+> ![Scatter plot showing age vs salary](Images/Age_vs_Salary.png)
 
 ---
 
